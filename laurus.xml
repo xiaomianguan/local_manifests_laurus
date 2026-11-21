@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Xiaomi MI CC 9e (laurus): AOSPA Ruby (Android 11) -->
+  <project name="xiaomianguan/android_device_xiaomi_laurus" path="device/xiaomi/laurus" remote="github" revision="aospa-ruby" />
+  <project name="xiaomianguan/aospa_kernel_xiaomi_laurus" path="kernel/xiaomi/laurus" remote="github" revision="aospa-ruby" clone-depth="1" />
+  <project name="xiaomianguan/proprietary_vendor_xiaomi_laurus" path="vendor/xiaomi/laurus" remote="github" revision="aospa-ruby" clone-depth="1" />
+
+  <!-- Frameworks with the frame-synchronized FOD changes. -->
+  <remove-project name="AOSPA/android_frameworks_base" />
+  <project name="xiaomianguan/aospa_frameworks_base" path="frameworks/base" remote="github" revision="aospa-ruby" clone-depth="1" />
+  <remove-project name="AOSPA/android_frameworks_native" />
+  <project name="xiaomianguan/aospa_frameworks_native" path="frameworks/native" remote="github" revision="aospa-ruby" clone-depth="1" />
+
+  <!-- Trinket uses the older Nicobar HAL branches. -->
+  <project name="AOSPA/android_hardware_qcom_audio" path="vendor/qcom/opensource/audio-hal/primary-hal" remote="aospa" revision="ruby-nicobar" clone-depth="1" />
+  <project name="AOSPA/android_hardware_qcom_display" path="hardware/qcom/display" remote="aospa" revision="ruby-nicobar" clone-depth="1" />
+  <project name="AOSPA/android_hardware_qcom_media" path="hardware/qcom/media" remote="aospa" revision="ruby-nicobar" clone-depth="1" />
+  <project name="AOSPA/android_hardware_qcom_gps" path="hardware/qcom/gps" remote="aospa" revision="ruby-nicobar" clone-depth="1" />
+
+  <!-- Use the existing Xiaomi bootloader; never build a replacement. -->
+  <remove-project name="abl/tianocore/edk2" />
+
+  <!-- Upstream moves since Ruby was released. -->
+  <remove-project name="ThankYouMario/proprietary_vendor_google_gms" />
+  <project name="ThankYouMario/ThankYouMario-proprietary_vendor_google_gms" path="vendor/google/gms" remote="github" revision="b9f886167665e54ba8c7e0bcc5504c842c743ac4" clone-depth="1" />
+  <remove-project name="platform/external/wayland" />
+  <project name="platform/external/wayland_repo" path="external/wayland" remote="caf_system" revision="036c10992b64f21c3dbb692907f7021461396537" clone-depth="1" />
+  <remove-project name="platform/tools/tradefederation" />
+  <project name="platform/tools/tradefederation_repo" path="tools/tradefederation/core" remote="caf_system" revision="63ce09c073a87fa758d381b86e193bf7ca187a50" clone-depth="1" />
+</manifest>
