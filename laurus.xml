@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Xiaomi MI CC 9e (laurus): AOSPA Ruby (Android 11) -->
-  <project name="xiaomianguan/android_device_xiaomi_laurus" path="device/xiaomi/laurus" remote="github" revision="aospa-ruby" />
+  <project name="xiaomianguan/android_device_xiaomi_laurus" path="device/xiaomi/laurus" remote="github" revision="aospa-ruby">
+    <!-- lunch runs AOSPA's roomservice, which requires this file. -->
+    <linkfile src="pa.dependencies" dest="vendor/pa/products/laurus/pa.dependencies" />
+  </project>
   <project name="xiaomianguan/aospa_kernel_xiaomi_laurus" path="kernel/xiaomi/laurus" remote="github" revision="aospa-ruby" clone-depth="1" />
   <project name="xiaomianguan/proprietary_vendor_xiaomi_laurus" path="vendor/xiaomi/laurus" remote="github" revision="aospa-ruby" clone-depth="1" />
 
